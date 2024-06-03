@@ -1,0 +1,472 @@
+// import * as React from "react";
+// import Box from "@mui/material/Box";
+// import Tab from "@mui/material/Tab";
+// import TabContext from "@mui/lab/TabContext";
+// import TabList from "@mui/lab/TabList";
+// import TabPanel from "@mui/lab/TabPanel";
+// import PhotoImg from "../../../../assets/Icons/photoimg2.png";
+// // import PhotoDanger from "../../../../assets/Icons/photodanger.svg";
+// import Photoplus from '../../../../assets/Icons/photoplusicon.svg';
+
+// export default function Photo() {
+//   const [value, setValue] = React.useState("");
+
+//   const handleChange = (event, newValue) => {
+//     setValue(newValue);
+//   };
+
+//   return (
+//     <div>
+//        <TabContext value={value}>
+//       {/* <Box sx={{ borderColor: "divider" }}>
+//         <TabList onChange={handleChange} aria-label="lab API tabs example">
+//           <Tab
+//             label="Exterior View"
+//             value="1"
+//             sx={{ textTransform: "capitalize" }}/>
+//           <Tab
+//             label="Living Room"
+//             value="2"
+//             sx={{ textTransform: "capitalize" }}/>
+//           <Tab
+//             label="Bedrooms"
+//             value="3"
+//             sx={{ textTransform: "capitalize" }}/>
+//           <Tab
+//             label="Bathrooms"
+//             value="4"
+//             sx={{ textTransform: "capitalize" }}/>
+//           <Tab label="Kitchen" value="5" sx={{ textTransform: "capitalize" }} />
+//           <Tab
+//             label="Floor Plan"
+//             value="6"
+//             sx={{ textTransform: "capitalize" }}/>
+//           <Tab label="Others" value="7" sx={{ textTransform: "capitalize" }} />
+//         </TabList>
+//       </Box> */}
+
+
+//       {/* <TabPanel value="1"> */}
+//         <div className="photo_cont">
+//           <img style={{ paddingBottom: "20px" }} src={PhotoImg} alt="img" />
+//           <p className="photo_add">+ Add Photos</p>
+//           <p className="photo_upload">
+//             Upload 50 photos of max size 10 mb in format jpg, jpeg, & png
+//           </p>
+//           <button className="photo_btn">Upload Photos</button>
+//         </div>
+
+
+//       {/* </TabPanel> */}
+//       {/* <TabPanel value="2">
+//         <div className="photo_cont">
+//           <img style={{ paddingBottom: "20px" }} src={PhotoImg} alt="img" />
+//           <p className="photo_add">+ Add Photos</p>
+//           <p className="photo_upload">
+//             Upload 60 photos of max size 10 mb in format jpg, jpeg, & png
+//           </p>
+//           <button className="photo_btn">Upload Photos</button>
+//         </div>
+//       </TabPanel>
+//       <TabPanel value="3">
+//         <div className="photo_cont">
+//           <img style={{ paddingBottom: "20px" }} src={PhotoImg} alt="img" />
+//           <p className="photo_add">+ Add Photos</p>
+//           <p className="photo_upload">
+//             Upload 70 photos of max size 10 mb in format jpg, jpeg, & png
+//           </p>
+//           <button className="photo_btn">Upload Photos</button>
+//         </div>
+       
+//       </TabPanel>
+//       <TabPanel value="4">
+//         <div className="photo_cont">
+//           <img style={{ paddingBottom: "20px" }} src={PhotoImg} alt="img" />
+//           <p className="photo_add">+ Add Photos</p>
+//           <p className="photo_upload">
+//             Upload 80 photos of max size 10 mb in format jpg, jpeg, & png
+//           </p>
+//           <button className="photo_btn">Upload Photos</button>
+//         </div>
+
+//       </TabPanel>
+//       <TabPanel value="5">
+//         <div className="photo_cont">
+//           <img style={{ paddingBottom: "20px" }} src={PhotoImg} alt="img" />
+//           <p className="photo_add">+ Add Photos</p>
+//           <p className="photo_upload">
+//             Upload 90 photos of max size 10 mb in format jpg, jpeg, & png
+//           </p>
+//           <button className="photo_btn">Upload Photos</button>
+//         </div>
+       
+
+//       </TabPanel>
+//       <TabPanel value="6">
+//         <div className="photo_cont">
+//           <img style={{ paddingBottom: "20px" }} src={PhotoImg} alt="img" />
+//           <p className="photo_add">+ Add Photos</p>
+//           <p className="photo_upload">
+//             Upload 100 photos of max size 10 mb in format jpg, jpeg, & png
+//           </p>
+//           <button className="photo_btn">Upload Photos</button>
+//         </div>
+
+
+//       </TabPanel>
+//       <TabPanel value="7">
+//         <div className="photo_cont">
+//           <img style={{ paddingBottom: "20px" }} src={PhotoImg} alt="img" />
+//           <p className="photo_add">+ Add Photos</p>
+//           <p className="photo_upload">
+//             Upload 10 photos of max size 10 mb in format jpg, jpeg, & png
+//           </p>
+//           <button className="photo_btn">Upload Photos</button>
+//         </div>
+//       </TabPanel> */}
+//     </TabContext>
+//     <div className="photo_cont">
+//         <div className="photo_imgCard">
+//           <div className="photo_whiteCard">
+//             <img src={Photoplus} alt=""/>
+//           </div>
+//           <div>
+//             <p className="pho_tag">#Tag Rooms</p>
+//           </div>
+//         </div>
+//     </div>
+//     </div>
+//   );
+// }
+
+import overType from '../../../../assets/Icons/pretype.svg'
+
+//vertical stepper
+
+import React, { useState } from "react";
+import { styled } from "@mui/material/styles";
+import Stack from "@mui/material/Stack";
+import Stepper from "@mui/material/Stepper";
+import Step from "@mui/material/Step";
+import StepLabel from "@mui/material/StepLabel";
+import Button from "@mui/material/Button";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import Grid from "@mui/material/Grid";
+import Paper from "@mui/material/Paper";
+import StepConnector, { stepConnectorClasses } from "@mui/material/StepConnector";
+import BasicDetails from "../Postproperty/PostContent/BasicDetails";
+import PropertyDetails from "../Postproperty/PostContent/PropertyDetails";
+import PricingDetails from "../Postproperty/PostContent/PricingDetails";
+import AmenitiesSection from "../Postproperty/PostContent/AmenitiesSection";
+import Photo from "../Postproperty/PostContent/Photo";
+import Edit from "../../../assets/Icons/editicon.svg";
+import formCall from "../../../assets/Icons/formcall.svg";
+import Dialog from "@mui/material/Dialog";
+import DialogTitle from "@mui/material/DialogTitle";
+import DialogContent from "@mui/material/DialogContent";
+import DialogActions from "@mui/material/DialogActions";
+import CloseIconSrc from "../../../assets/Icons/amacloseicon.svg";
+import TickIconSrc from "../../../assets/Icons/amatickicon.svg";
+import { Link } from "react-router-dom";
+
+const Item = styled(Paper)(({ theme }) => ({
+  backgroundColor: theme.palette.mode === "dark" ? "#00ff00" : "#fff",
+  ...theme.typography.body2,
+  padding: theme.spacing(1),
+  textAlign: "center",
+  color: theme.palette.text.secondary,          
+}));
+
+const QontoConnector = styled(StepConnector)(({ theme }) => ({
+  [`&.${stepConnectorClasses.alternativeLabel}`]: {
+    top: 10,
+    left: "calc(-50% + 16px)",
+    right: "calc(50% + 16px)",
+  },
+  [`&.${stepConnectorClasses.active}`]: {
+    [`& .${stepConnectorClasses.line}`]: {
+      borderColor: "#00ff00",
+    },
+  },
+  [`&.${stepConnectorClasses.completed}`]: {
+    [`& .${stepConnectorClasses.line}`]: {
+      borderColor: "#00ff00",
+    },
+  },
+  [`& .${stepConnectorClasses.line}`]: {
+    borderColor:
+      theme.palette.mode === "dark" ? theme.palette.grey[800] : "#00ff00",
+    borderTopWidth: 3,
+    borderRadius: 1,
+  },
+}));
+
+const stepsbutton = [
+  "basic details",
+  "Property Details",
+  "Photos",
+  "Pricing & Others",
+  "Amenities Section",
+];
+
+const capitalizeFirstLetter = (string) => {
+  return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
+};
+
+const steps = [
+  "Basic Details",
+  "Property Details",
+  "Photos",
+  "Pricing & Others",
+  "Amenities Section",
+];
+
+export default function HorizontalStepper() {
+  const [activeStep, setActiveStep] = useState(0);
+  const [openModal, setOpenModal] = useState(false);
+
+  const handleStep = (step) => () => {
+    setActiveStep(step);
+    setOpenModal(false); 
+  };
+
+  const handleNext = () => {
+    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+  };
+
+  const handleBack = () => {
+    setActiveStep((prevActiveStep) => prevActiveStep - 1);
+  };
+
+  const handleFinish = () => {
+    setOpenModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setActiveStep(0); 
+    setOpenModal(false);
+  };
+
+  const getContentForStep = (stepIndex) => {
+    switch (stepIndex) {
+      case 0:
+        return <BasicDetails />;
+      case 1:
+        return <PropertyDetails />;
+      case 2:
+        return <Photo />;
+      case 3:
+        return <PricingDetails />;
+      case 4:
+        return <AmenitiesSection />;
+      default:
+        return null;
+    }
+  };
+  
+  return (
+    <div className="ki">
+      <Stack direction="column" spacing={3}>
+        <Grid container spacing={3}>
+          <Grid item xs={12}>
+            <Item
+              style={{
+                padding: "30px 50px",
+                height: "92vh",
+                overflowY: "scroll",
+              }}
+            >
+              <Stepper activeStep={activeStep} connector={<QontoConnector />}>
+                {steps.map((label, index) => (
+                  <Step key={index}>
+                    <StepLabel>{label}</StepLabel>
+                  </Step>
+                ))}
+              </Stepper>
+
+              {getContentForStep(activeStep)}
+
+              <Stack
+                direction="row"
+                spacing={2}
+                justifyContent="center"
+                className="mt-4"
+              >
+                <Button
+                  disabled={activeStep === 0}
+                  onClick={handleBack}
+                  startIcon={<ArrowBackIcon />}
+                >
+                  Back
+                </Button>
+                {activeStep === steps.length - 1 ? (
+                  <Button
+                    variant="contained"
+                    onClick={handleFinish}
+                    endIcon={<ArrowForwardIcon />}
+                  >
+                    Finish
+                  </Button>
+                ) : (
+                  <Button
+                    variant="contained"
+                    onClick={handleNext}
+                    endIcon={<ArrowForwardIcon />}
+                  >
+                    {`Next, Add ${capitalizeFirstLetter(
+                      stepsbutton[activeStep + 1]
+                    )}`}
+                  </Button>
+                )}
+              </Stack>
+            </Item>
+          </Grid>
+        </Grid>
+      </Stack>
+      {/* Modal */}
+      <Dialog open={openModal} onClose={handleCloseModal}>
+        <DialogTitle>
+          <div style={{ display: "flex", justifyContent: "flex-end", alignItems: "center" }}>
+            <Button onClick={handleCloseModal}>
+              <img src={CloseIconSrc} alt="close" />
+            </Button>
+          </div>
+        </DialogTitle>
+        <DialogContent>
+          <div style={{ display: "flex", alignItems: "center", marginBottom: "10px", flexDirection:"column",gap:"10px" }}>
+            <img className="ama_tick" src={TickIconSrc} alt="" />
+            <p className="ama_congrats">Congratulations !</p>
+            <p className="ama_content">You have successfully posted your property, it will be live within 3 Hrs</p>
+            <div>
+              <button className="ama_edit" onClick={handleStep(0)}>Edit</button>
+              <Link to ="">
+              </Link>
+              <button className="ama_preview">Preview Listing</button>
+              {/* <button className="ama_edit" onClick={handleStep(1)}>Edit</button> */}
+            </div>
+          </div>
+        </DialogContent>
+        <DialogActions>
+        </DialogActions>
+      </Dialog>
+    </div>
+  );
+}
+
+  // const fileInputRef = React.useRef(null);
+  // const [selectedImages, setSelectedImages] = React.useState([]);
+  // const [selectedTag, setSelectedTag] = React.useState("");
+
+  // const handleImageChange = (event) => {
+  //   const files = event.target.files;
+  //   setSelectedImages((prevImages) => [...prevImages, ...Array.from(files)]);
+  // };
+
+  // const handleButtonClick = () => {
+  //   if (fileInputRef.current) {
+  //     fileInputRef.current.click();
+  //   }
+  // };
+
+  // const handleDelete = (index) => {
+  //   const updatedImages = [...selectedImages];
+  //   updatedImages.splice(index, 1);
+  //   setSelectedImages(updatedImages);
+  // };
+
+  // const handleTagChange = (event) => {
+  //   setSelectedTag(event.target.value);
+  // };
+
+  // return (
+  //   <div>
+  //     <h3 className="basic_heading m-0">Upload photos</h3>
+  //     {selectedImages.length === 0 && (
+  //       <div className="photo_cont">
+  //         <img style={{ paddingBottom: "20px" }} src={PhotoImg} alt="img" />
+  //         <p className="photo_add" onClick={handleButtonClick}>
+  //           + Add Photos
+  //         </p>
+  //         <p className="photo_upload">
+  //           Upload 50 photos of max size 10 mb in format jpg, jpeg, & png
+  //         </p>
+  //         <input
+  //           type="file"
+  //           accept="image/*"
+  //           onChange={handleImageChange}
+  //           multiple
+  //           style={{ display: "none", width: "100px", height: "100px" }}
+  //           ref={fileInputRef}
+  //         />
+  //         <button className="photo_btn" onClick={handleButtonClick}>
+  //           Upload Photos
+  //         </button>
+  //       </div>
+  //     )}
+
+  //     <div className="photo_cont1">
+  //       {selectedImages.map((image, index) => (
+  //         <div key={index} className="photo_imgCard">
+  //           <img
+  //             className="delete-icon"
+  //             src={DeleteIcon}
+  //             alt="delete"
+  //             onClick={() => handleDelete(index)}
+  //           />
+  //           <div className="photo_whiteCard">
+  //             <img
+  //               src={URL.createObjectURL(image)}
+  //               alt={`img-${index}`}
+  //               style={{ width: "100px", height: "100px" }}
+  //             />
+  //           </div>
+  //           <div>
+  //             {/* <FormControl variant="outlined"> */}
+  //               <Select
+  //                 label="Tag Rooms"
+  //                 value={selectedTag}
+  //                 onChange={handleTagChange}
+  //               >
+  //                 <MenuItem value="Select Room">Select Room</MenuItem>
+  //                 <MenuItem value="Exterior View">Exterior View</MenuItem>
+  //                 <MenuItem value="Living Room">Living Room</MenuItem>
+  //                 <MenuItem value="Bedrooms">Bedrooms</MenuItem>
+  //                 <MenuItem value="Bathrooms">Bathrooms</MenuItem>
+  //                 <MenuItem value="Kitchen">Kitchen</MenuItem>
+  //                 <MenuItem value="Floor Plan">Floor Plan</MenuItem>
+  //                 <MenuItem value="Others">Others</MenuItem>
+  //               </Select>
+  //             {/* </FormControl> */}
+  //           </div>
+  //         </div>
+  //       ))}
+
+  //       {/* Show the plus icon card only if there are images */}
+  //       {selectedImages.length > 0 && (
+  //         <div className="photo_imgCard upload" onClick={handleButtonClick}>
+  //           <div className="photo_whiteCard">
+  //             <img src={Photoplus} alt="" onClick={handleButtonClick} />
+  //           </div>
+  //           <div>
+  //             <FormControl variant="outlined">
+  //               <Select
+  //                 label="Tag Rooms"
+  //                 value={selectedTag}
+  //                 onChange={handleTagChange}
+  //               >
+  //                 <MenuItem value="Option1">Option 1</MenuItem>
+  //                 <MenuItem value="Option2">Option 2</MenuItem>
+  //                 <MenuItem value="Option3">Option 3</MenuItem>
+  //                 <MenuItem value="Option4">Option 4</MenuItem>
+  //                 <MenuItem value="Option5">Option 5</MenuItem>
+  //               </Select>
+  //             </FormControl>
+  //           </div>
+  //         </div>
+  //       )}
+  //     </div>
+  //   </div>
+  // );
+
+  //

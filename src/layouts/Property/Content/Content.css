@@ -1,0 +1,127 @@
+:root {
+    /* Text styles */
+    --text-color:#4B4747;
+    --primary-text-color:#8B8B8B;
+    --secondary-text-color: #1877F2;
+    --font-family: lato;
+    --font-size:12px;
+    --primary-font-size: 14px;
+    --secondary-font-size: 16px;
+    --font-weight: 500;
+  
+    /* Color styles */
+    --primary-background-color: #2196F3;
+    --secondary-background-color: ;
+    
+  
+    /* Background color */
+    --background-color: #fff;
+
+
+    /*card background*/
+
+
+  }
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.filter_head{
+font-family: var(--font-family);
+font-size: var(--secondary-font-size);
+font-weight: var(--font-weight);
+line-height: 20px;
+letter-spacing: 0.25px;
+text-align: left;
+color: #1877F2;
+margin: 0;
+}
+.filter_reset{
+font-family:var(--font-family);
+font-weight: var(--font-weight);
+font-size: var(--font-size);
+line-height: 19px;
+color: var(--text-color);
+margin: 0;
+padding-left: 5px;
+  
+}
+.fil_sub{
+  display: flex;
+  justify-content:flex-start;
+  align-items: center;
+}
+.filter_parent .card{
+  padding: 20px 15px;
+  /* height: 100vh; */
+}
+.contentPreview .card{
+  height: 100vh;
+}
+.allFilters{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #E6E6E6;
+  margin-bottom: 20px;
+
+}
+.css-1c35hjw-MuiPaper-root-MuiAccordion-root{
+  box-shadow: none !important;
+}
+.filter_propertiesaccord{
+font-family: var(--font-family)!important ;
+font-size: var(--secondary-font-size) !important;
+font-weight: var(--font-family);
+line-height: 19px !important;
+letter-spacing: 0em !important;
+text-align: left !important;
+color: var(--text-color) !important; 
+border-bottom: 1px solid #E6E6E6;
+
+}
+.filter_protype{
+font-family: var(--font-family);
+font-size: var(--primary-font-size);
+font-weight: var(--font-weight);
+line-height: 17px;
+letter-spacing: 0em;
+text-align: left;
+color: var(--primary-text-color);
+padding-left: 10px;
+}
+.filter_checkbox{
+  width: 16px;
+  height: 16px;
+}
+.css-o4b71y-MuiAccordionSummary-content.Mui-expanded{
+  margin: 0 !important;
+}
+.filter_accord{
+  padding: 10px 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.filter_parent .loc_bhk{
+  padding: 20px 15px;
+    border-bottom: 1px solid #E6E6E6;
+    color:var(--text-color);
+}
+.filter_parent .loc_bhkopt{
+  margin-bottom: 16px;
+  font-size: 13px;
+  padding: 5px 10px;
+  color: var(--text-color);
+
+}
+.filter_furniture{
+  border-bottom: 1px solid #E6E6E6;
+}
+.css-sghohy-MuiButtonBase-root-MuiButton-root{
+  background-color: #2196F3 !important;
+}

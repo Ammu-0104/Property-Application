@@ -1,0 +1,148 @@
+
+const [selectedBedrooms, setSelectedBedrooms] = useState(null);
+  const [selectedBathrooms, setSelectedBathrooms] = useState(null);
+  const [selectedBalcony, setSelectedBalcony] = useState(null);
+  const [selectedSquare, setSelectedSquare] = useState(null);
+  const [selectedOtherRooms, setSelectedOtherRooms] = useState([]);
+  const [selectedFurniture, setSelectedFurniture] = useState(null);
+  const [selectedParking, setSelectedParking] = useState("");
+  const [selectedOpenParking, setSelectedOpenParking] = useState(null);
+  const [selectedTotalFloors, setSelectedTotalFloors] = useState("");
+  const [selectedPropertyFloor, setSelectedPropertyFloor] = useState("");
+  const [showDirectionDropdown, setShowDirectionDropdown] = useState(false);
+  const [selectedDirection, setSelectedDirection] = useState("");
+
+  const getBedroomButtonStyle = (bedroom) => {
+    return {
+      borderColor: selectedBedrooms === bedroom ? "#2196F3" : "#E6E6E6",
+      backgroundColor: selectedBedrooms === bedroom ? "#2196F3" : "white",
+      color: selectedBedrooms === bedroom ? "#FFFFFF" : "#8b8b8b",
+    };
+  };
+
+  const handleBedroomClick = (bedroom) => {
+    setSelectedBedrooms(bedroom);
+  };
+
+  const handleBedroomChange = (e) => {
+    setSelectedBedrooms(parseInt(e.target.value, 10));
+  };
+
+  const handleBathroomClick = (bathroom) => {
+    setSelectedBathrooms(bathroom);
+  };
+
+  const getBalconyButtonStyle = (balcony) => {
+    return {
+      borderColor: selectedBalcony === balcony ? "#2196F3" : "#e6e6e6",
+      backgroundColor: selectedBalcony === balcony ? "#2196F3" : "white",
+      color: selectedBalcony === balcony ? "#FFFFFF" : "#8b8b8b",
+    };
+  };
+
+  const getBathroomButtonStyle = (bathroom) => {
+    return {
+      borderColor: selectedBathrooms === bathroom ? "#2196F3" : "#e6e6e6",
+      backgroundColor: selectedBathrooms === bathroom ? "#2196F3" : "white",
+      color: selectedBathrooms === bathroom ? "#FFFFFF" : "#8b8b8b",
+    };
+  };
+
+  const handleBathroomChange = (e) => {
+    setSelectedBathrooms(parseInt(e.target.value, 10));
+  };
+
+  const handleBalconyclick = (balcony) => {
+    setSelectedBalcony(balcony);
+  };
+
+  const handleBalconyChange = (e) => {
+    setSelectedBalcony(parseInt(e.target.value, 10));
+  };
+
+  const handleSquareChange = (e) => {
+    setSelectedSquare(parseInt(e.target.value));
+  };
+
+  const handleOtherRoomclick = (otherRoom) => {
+    if (selectedOtherRooms.includes(otherRoom)) {
+      setSelectedOtherRooms(
+        selectedOtherRooms.filter((room) => room !== otherRoom)
+      );
+    } else {
+      setSelectedOtherRooms([...selectedOtherRooms, otherRoom]);
+    }
+  };
+
+  const getOtherRoomButtonStyle = (otherRoom) => {
+    return {
+      backgroundColor: selectedOtherRooms.includes(otherRoom)
+        ? "#2196F3"
+        : "white",
+      color: selectedOtherRooms.includes(otherRoom) ? "#FFFFFF" : "#8b8b8b",
+    };
+  };
+
+  const handleFurnitureClick = (furniture) => {
+    setSelectedFurniture(furniture);
+  };
+
+  const getFurnitureButtonStyle = (furniture) => {
+    return {
+      borderColor: selectedFurniture === furniture ? "#2196F3" : "#e6e6e6",
+      backgroundColor: selectedFurniture === furniture ? "#2196F3" : "white",
+      color: selectedFurniture === furniture ? "#FFFFFF" : "#8b8b8b",
+    };
+  };
+  const handleParkingClick = (parking) => {
+    setSelectedParking(parking);
+  };
+
+  const handleParkingChange = (e) => {
+    const selectedOption = e.target.value;
+    setSelectedParking(selectedOption);
+  };
+
+  const getParkingButtonStyle = (parking) => {
+    return {
+      borderColor: selectedParking === parking ? "#2196F3" : "#e6e6e6",
+      backgroundColor: selectedParking === parking ? "#2196F3" : "white",
+      color: selectedParking === parking ? "#FFFFFF" : "#8b8b8b",
+    };
+  };
+
+  const getOpenParkingButtonStyle = (openParking) => {
+    return {
+      borderColor: selectedOpenParking === openParking ? "#2196F3" : "#e6e6e6",
+      backgroundColor:
+        selectedOpenParking === openParking ? "#2196F3" : "white",
+      color: selectedOpenParking === openParking ? "#FFFFFF" : "#8b8b8b",
+    };
+  };
+
+  const handleOpenParkingChange = (e) => {
+    setSelectedOpenParking(parseInt(e.target.value, 10));
+  };
+
+  const handleOpenParkingClick = (openParking) => {
+    setSelectedOpenParking(openParking);
+  };
+
+  const handleTotalFloorsChange = (event) => {
+    setSelectedTotalFloors(event.target.value);
+  };
+
+  const handlePropertyFloorChange = (event) => {
+    setSelectedPropertyFloor(event.target.value);
+  };
+
+  const handleDirectionChange = (e) => {
+    setSelectedDirection(e.target.value);
+  };
+
+  const getFacingParkingButtonStyle = (direction) => {
+    return {
+      backgroundColor: "#2196F3",
+      color: "#FFFF",
+    };
+  };
